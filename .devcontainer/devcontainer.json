@@ -1,0 +1,53 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ruby
+{
+  "name": "krails_id",
+  "dockerComposeFile": "compose.yaml",
+  "service": "web",
+  "workspaceFolder": "/workspaces/krails_id",
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    "ghcr.io/rails/devcontainer/features/activestorage": {},
+    "ghcr.io/rails/devcontainer/features/postgres-client": {}
+  },
+  "containerEnv": {
+    //   "CAPYBARA_SERVER_PORT": "45678",
+    //   "SELENIUM_HOST": "selenium",
+    //   "REDIS_URL": "redis://redis:6379/1",
+    "DB_HOST": "postgres",
+    "DB_USERNAME": "postgres",
+    "DB_PASSWORD": "postgres",
+    "TZ": "Asia/Tokyo"
+  },
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [
+    3000,
+    5432,
+    6379
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Shopify.ruby-extensions-pack",
+        "misogi.ruby-rubocop",
+        "ms-azuretools.vscode-docker",
+        "gerane.Theme-Dark-Dracula",
+        "MS-CEINTL.vscode-language-pack-ja",
+        "rangav.vscode-thunder-client",
+        "bung87.rails",
+        "kaiwood.endwise",
+        "castwide.solargraph",
+        "oderwat.indent-rainbow",
+        "PKief.material-icon-theme",
+        "formulahendry.auto-close-tag",
+        "donjayamanne.githistory"
+      ]
+    }
+  }
+  // Configure tool-specific properties.
+  // "customizations": {},
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root",
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "bin/setup"
+}

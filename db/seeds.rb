@@ -7,3 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+10.times do
+  password = Faker::Internet.password(min_length: 8) # パスワードを生成
+  saved_user = User.create!(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: password,
+    password_confirmation: password # 確認用パスワードも同じにする
+  )
+  p saved_user
+end

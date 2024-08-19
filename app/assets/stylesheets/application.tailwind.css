@@ -11,3 +11,31 @@
 }
 
 */
+
+@layer components {
+  .app-table-default {
+    @apply border border-gray-300 w-full table-fixed;
+    
+    th {
+      @apply px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider;
+    }
+
+    td {
+      @apply px-6 py-3 text-left whitespace-nowrap;
+    }
+  }
+  .app-table-default th, .app-table-default td {
+    border-right: 1px solid #e2e8f0; /* Tailwindの divide-gray-200 相当 */
+  }
+
+  .app-table-default th:last-child, .app-table-default td:last-child {
+    border-right: none; /* 最後のセルの右線を消す */
+  }
+  .app-pagenation-enabled {
+    @apply py-2 px-4 bg-white hover:bg-gray-100 text-gray-800 font-light border border-gray-400 rounded shadow;
+  }
+  .app-pagenation-disabled {
+    @apply py-2 px-4 bg-gray-100 text-gray-500 border border-gray-400 rounded shadow cursor-not-allowed;
+  }
+  
+}

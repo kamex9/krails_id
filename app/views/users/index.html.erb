@@ -1,4 +1,31 @@
 <div>
   <h1 class="font-bold text-4xl">Users#index</h1>
   <p>Find me in app/views/users/index.html.erb</p>
+
+  <!-- テーブルコンテナ -->
+  <div class="mx-4 my-12 overflow-x-auto max-w-full max-h-full">
+    <table class="app-table-default divide-y divide-gray-200">
+      <thead class="bg-gray-50 divide-x divide-red-200">
+        <tr>
+          <th class="w-1/12">ID</th>
+          <th class="w-1/4">Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y divide-gray-200">
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ページネーション -->
+  <div class="pagination w-full">
+    <%= paginate @users %>
+  </div>
 </div>
